@@ -1,0 +1,215 @@
+/* Global Styles */
+body, html {
+    margin: 5px;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+/* Buttons */
+#modeButton {
+    font-size: 16px;
+    font-weight: bold;
+    width: 70px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+#modeButton:hover {
+    transform: scale(1.1);
+}
+
+/* Utility Classes */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    text-align: center;
+}
+
+/* Logo */
+#HomeLogo {
+    display: flex;
+    width: 70px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#HomeLogo:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    position: sticky;
+    top: 10px;
+    background-color: rgba(210, 247, 126, 0.8);
+    justify-content: space-between;
+    border-radius: 5px;
+    align-items: center;
+    font-size: 24px;
+    box-shadow: 5px 5px 14px rgba(0, 0, 0, 1.0);
+}
+
+.dark-mode nav {
+    background-color: #333333;
+    box-shadow: 5px 5px 14px rgb(99, 99, 99);
+}
+
+.navTextLinks {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navTextLinks a {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: underline;
+}
+
+.navTextLinks a:hover {
+    transform: scale(1.1);
+}
+
+/* Contact Form */
+.contactForm {
+    display: inline-block;
+    max-width: 400px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 1.0);
+}
+
+.contactForm label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.contactForm input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.contactForm input {
+    font-size: large;
+}
+
+.contactForm input:invalid {
+    border-color: red;
+}
+
+.contactForm input:valid {
+    border-color: green;
+}
+
+/* Light Mode */
+.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.light-mode #HomeLogo:hover {
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
+}
+
+.light-mode button {
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 25px;
+}
+
+.light-mode .navTextLinks a {
+    color: #000000;
+}
+
+.light-mode .navTextLinks a:hover {
+    color: #007bff;
+}
+
+.light-mode .contactForm {
+    background-color: rgba(210, 247, 126, 0.8);
+    color: #000000;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #000000;
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode #HomeLogo {
+    filter: invert(1);
+}
+
+.dark-mode #HomeLogo:hover {
+    filter: invert(1) drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+}
+
+.dark-mode button {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 25px;
+}
+
+.dark-mode .navTextLinks a {
+    color: #ffffff;
+}
+
+.dark-mode .navTextLinks a:hover {
+    color: #ffbb00;
+}
+
+.dark-mode .contactForm {
+    background-color: #333333;
+    color: #ffffff;
+    box-shadow: 5px 5px 14px rgb(99, 99, 99);
+}
+
+.dark-mode input:invalid {
+    border-color: red;
+}
+
+.dark-mode input:valid {
+    border-color: green;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    nav {
+        font-size: 20px;
+        width: min-content;
+    }
+
+    .navTextLinks {
+        flex-direction: row;
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    #modeButton {
+        font-size: 14px;
+        width: 60px;
+    }
+}
