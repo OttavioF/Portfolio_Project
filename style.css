@@ -55,10 +55,11 @@ nav {
     top: 10px;
     background-color: rgba(210, 247, 126, 0.8);
     justify-content: space-between;
-    border-radius: 5px;
+    border-radius: 50px;
     align-items: center;
     font-size: 24px;
     box-shadow: 5px 5px 14px rgba(0, 0, 0, 1.0);
+    width: 100%;
 }
 
 .dark-mode nav {
@@ -95,19 +96,15 @@ nav {
 }
 
 .contactForm label {
-    margin: 10px 0 5px;
     font-weight: bold;
 }
 
 .contactForm input {
     width: 100%;
-    padding: 10px;
+    padding: 3px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
-}
-
-.contactForm input {
     font-size: large;
 }
 
@@ -121,7 +118,7 @@ nav {
 
 /* Light Mode */
 .light-mode {
-    background-color: #ffffff;
+    background-color: #e7dfba;
     color: #000000;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -193,7 +190,7 @@ nav {
 }
 
 /* Media Query for Small Screens */
-@media (max-width: 768px) {
+@media (max-width: 450px) {
     nav {
         font-size: 20px;
         width: min-content;

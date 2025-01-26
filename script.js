@@ -43,3 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+const form = document.getElementById('userForm');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Thank you for your submission! You can contact Ottavio at fazzio.ottavio@gmail.com');
+    });
