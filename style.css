@@ -1,7 +1,6 @@
 /* Global Styles */
 body, html {
     margin: 5px;
-    padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
 }
@@ -9,8 +8,6 @@ body, html {
 h1 {
     font-size: 3em;
     font-weight: bold;
-    margin: 0;
-    padding: 0;
 }
 
 /* Buttons */
@@ -64,14 +61,13 @@ nav {
 
 .dark-mode nav {
     background-color: #333333;
-    box-shadow: 5px 5px 14px rgb(99, 99, 99);
+    box-shadow: 5px 5px 14px rgba(99, 99, 99, 1.0);
 }
 
 .navTextLinks {
     display: flex;
     flex-grow: 1;
     justify-content: space-around;
-    align-items: center;
 }
 
 .navTextLinks a {
@@ -145,6 +141,9 @@ nav {
     background-color: rgba(210, 247, 126, 0.8);
     color: #000000;
 }
+.light-mode .contactForm  input {
+    background-color: rgba(246, 255, 225, 0.8);
+}
 
 /* Dark Mode */
 .dark-mode {
@@ -181,14 +180,25 @@ nav {
     box-shadow: 5px 5px 14px rgb(99, 99, 99);
 }
 
-.dark-mode input:invalid {
-    border-color: red;
+/* Grid Layout*/
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    padding: 10px;
 }
 
-.dark-mode input:valid {
-    border-color: green;
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    border-radius: 50px;
 }
-
+.dark-mode .grid-item {
+    background-color: #333333;
+    border: 1px solid rgba(247, 247, 247, 0.8);
+}
 /* Media Query for Small Screens */
 @media (max-width: 450px) {
     nav {
