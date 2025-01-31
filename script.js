@@ -25,17 +25,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById("userForm");
     if (form) {
         const nameInput = form.elements['name'];
-        const companyInput = form.elements['company'];
         const emailInput = form.elements['email'];
+        const messageInput = form.elements['message'];
+        
+
         form.addEventListener('submit', (event) => {
             event.preventDefault();
             if (form.checkValidity()) {
                 console.log('Form is valid. Submitting...');
                 console.log('Name:', nameInput.value);
-                console.log('Company:', companyInput.value);
                 console.log('Email:', emailInput.value);
+                console.log('Message:', messageInput.value);
+                
+                alert('Thank you for your submission! You can contact Ottavio at fazzio.ottavio@gmail.com');
                 form.reset();
-                // Here you would typically send the data to a server
             } else {
                 console.log('Form is invalid. Please correct the errors.');
                 form.reportValidity();
@@ -43,8 +46,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-const form = document.getElementById('userForm');
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        alert('Thank you for your submission! You can contact Ottavio at fazzio.ottavio@gmail.com');
-    });

@@ -1,8 +1,26 @@
 /* Global Styles */
 body, html {
-    margin: 5px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
     height: 100%;
     font-family: Arial, sans-serif;
+    overflow-x: visible;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('pistaBackground.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2; /* Adjust opacity as needed */
+    pointer-events: none;
+    z-index: -1;
 }
 
 h1 {
@@ -14,17 +32,31 @@ h1 {
 #modeButton {
     font-size: 16px;
     font-weight: bold;
-    width: 70px;
     text-align: center;
     transition: transform 0.3s ease;
     cursor: pointer;
     border-radius: 25px;
+    margin-left: auto;
+    margin-right: 10px;
+    padding: 10px 15px;
 }
 
 #modeButton:hover {
     transform: scale(1.1);
 }
 
+#submitForm {
+    border-radius: 25px;
+    border-color: #a5954f;
+    color: #a5954f;
+    transition: transform 0.3s ease;
+}
+
+#submitForm:hover {
+    transform: scale(1.1);
+    border-color: #1a9434;
+    color: #1a9434;
+}
 /* Utility Classes */
 .center-container {
     display: flex;
@@ -37,7 +69,7 @@ h1 {
 /* Logo */
 #HomeLogo {
     display: flex;
-    width: 70px;
+    width: 100px;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -50,13 +82,13 @@ nav {
     display: flex;
     position: sticky;
     top: 10px;
-    background-color: rgba(210, 247, 126, 0.8);
+    background-color: rgba(210, 247, 126, 0.7);
     justify-content: space-between;
-    border-radius: 50px;
     align-items: center;
     font-size: 24px;
     box-shadow: 5px 5px 14px rgba(0, 0, 0, 1.0);
     width: 100%;
+    border-radius: 50px;
 }
 
 .dark-mode nav {
@@ -64,6 +96,7 @@ nav {
     box-shadow: 5px 5px 14px rgba(99, 99, 99, 1.0);
 }
 
+/* Navigation Links */
 .navTextLinks {
     display: flex;
     flex-grow: 1;
@@ -74,12 +107,14 @@ nav {
     font-size: 20px;
     font-weight: bold;
     padding: 0 15px;
-    transition: color 0.3s ease, transform 0.3s ease;
     text-decoration: underline;
+    color: #a5954f;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navTextLinks a:hover {
     transform: scale(1.1);
+    color: #1a9434;
 }
 
 /* Contact Form */
@@ -89,6 +124,7 @@ nav {
     padding: 40px;
     border-radius: 10px;
     box-shadow: 6px 6px 12px rgba(0, 0, 0, 1.0);
+    color: #a5954f;
 }
 
 .contactForm label {
@@ -123,25 +159,16 @@ nav {
     filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
 }
 
-.light-mode button {
+.light-mode #modeButton {
     background-color: #000000;
     color: #ffffff;
-    border-radius: 25px;
-}
-
-.light-mode .navTextLinks a {
-    color: #000000;
-}
-
-.light-mode .navTextLinks a:hover {
-    color: #007bff;
 }
 
 .light-mode .contactForm {
     background-color: rgba(210, 247, 126, 0.8);
-    color: #000000;
 }
-.light-mode .contactForm  input {
+
+.light-mode .contactForm input {
     background-color: rgba(246, 255, 225, 0.8);
 }
 
@@ -152,6 +179,10 @@ nav {
     transition: background-color 0.3s, color 0.3s;
 }
 
+.dark-mode::before {
+    filter: invert(1);
+}
+
 .dark-mode #HomeLogo {
     filter: invert(1);
 }
@@ -160,27 +191,17 @@ nav {
     filter: invert(1) drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
 }
 
-.dark-mode button {
+.dark-mode #modeButton {
     background-color: #ffffff;
     color: #000000;
-    border-radius: 25px;
-}
-
-.dark-mode .navTextLinks a {
-    color: #ffffff;
-}
-
-.dark-mode .navTextLinks a:hover {
-    color: #ffbb00;
 }
 
 .dark-mode .contactForm {
     background-color: #333333;
-    color: #ffffff;
     box-shadow: 5px 5px 14px rgb(99, 99, 99);
 }
 
-/* Grid Layout*/
+/* Grid Layout */
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -195,20 +216,51 @@ nav {
     text-align: center;
     border-radius: 50px;
 }
+
 .dark-mode .grid-item {
     background-color: #333333;
     border: 1px solid rgba(247, 247, 247, 0.8);
 }
+
+/* Home Content */
+.homeContent {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slideIn 1s ease-out;
+}
+
 /* Media Query for Small Screens */
 @media (max-width: 450px) {
     nav {
         font-size: 20px;
-        width: min-content;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .navTextLinks {
-        flex-direction: row;
+        flex-direction: column;
+        gap: 5px;
         font-size: 18px;
+        text-align: center;
+        margin-top: 10px;
     }
 
     h1 {
@@ -216,7 +268,8 @@ nav {
     }
 
     #modeButton {
-        font-size: 14px;
-        width: 60px;
+        font-size: 12px;
+        width: auto;
+        padding: 8px 12px;
     }
 }
