@@ -6,12 +6,13 @@
     <link href="style.css" rel="stylesheet">
     <script defer src="script.js"></script>
     <link rel="shortcut icon" href="of_dev_icon.ico">
-    <title>Home</title>
+    <title>Contact</title>
 </head>
 <body class="light-mode">
     <nav>
-        <a href="Home.html"><img id="HomeLogo" src="Homelogo.png" alt="Icon"></a> 
-        <div class="navTextLinks">
+        <a href="Home.html"><img id="HomeLogo" src="Homelogo.png" alt="Icon"></a>
+        <button id="menuButton">☰</button>
+        <div class="navTextLinks" id="slide-down">
             <a href="page2.html">About</a> 
             <a href="page3.html">Recipes</a> 
             <a href="page4.html">Contact</a> 
@@ -19,10 +20,9 @@
         <button id="modeButton" onclick="toggleMode()">Dark Mode</button>
     </nav>
     <div class="center-container">
-        <h1>Get in touch!</h1>
+        <h1 class="slide-in">Get in touch!</h1>
     </div>
-    <div>
-        
+    <div class="form">
         <form class="contactForm" id="userForm">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required/>
@@ -30,7 +30,6 @@
             <input type="email" id="email" name="email" required/>
             <label for="message">Message:</label>
             <input type="text" id="message" name="message" required/>
-            
             <button type="submit" id="submitForm">Submit</button>
         </form>
     </div>

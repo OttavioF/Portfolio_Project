@@ -5,7 +5,10 @@ body, html {
     width: 100%;
     height: 100%;
     font-family: Arial, sans-serif;
-    overflow-x: visible;
+}
+
+#homeContent {
+    font-weight: bold;
 }
 
 body::before {
@@ -18,7 +21,7 @@ body::before {
     background-image: url('pistaBackground.png');
     background-size: cover;
     background-position: center;
-    opacity: 0.2; /* Adjust opacity as needed */
+    opacity: 0.2;
     pointer-events: none;
     z-index: -1;
 }
@@ -28,28 +31,91 @@ h1 {
     font-weight: bold;
 }
 
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 20px;
+    gap:20px;
+    justify-items: center;
+}
+
+.gallery img {
+    border-radius: 30px;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Lightbox styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
 /* Buttons */
 #modeButton {
+    display: flex;
     font-size: 16px;
     font-weight: bold;
-    text-align: center;
     transition: transform 0.3s ease;
     cursor: pointer;
     border-radius: 25px;
-    margin-left: auto;
     margin-right: 10px;
-    padding: 10px 15px;
 }
 
 #modeButton:hover {
     transform: scale(1.1);
 }
 
+#menuButton {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 #submitForm {
+    font-size: 16px;
     border-radius: 25px;
     border-color: #a5954f;
     color: #a5954f;
     transition: transform 0.3s ease;
+    display: block;
+    margin: 10px auto;
+    width: 80px;
+    transition: color 0.3 ease;
 }
 
 #submitForm:hover {
@@ -61,15 +127,16 @@ h1 {
 .center-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 200px;
-    text-align: center;
+    padding-top: 8%;
 }
 
 /* Logo */
 #HomeLogo {
     display: flex;
-    width: 100px;
+    position:relative;
+    width: 80px;
+    padding-left: 2px;
+    padding-top: 2px;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -80,8 +147,9 @@ h1 {
 /* Navigation Bar */
 nav {
     display: flex;
-    position: sticky;
+    position: fixed;
     top: 10px;
+    height: 60px;
     background-color: rgba(210, 247, 126, 0.7);
     justify-content: space-between;
     align-items: center;
@@ -89,10 +157,15 @@ nav {
     box-shadow: 5px 5px 14px rgba(0, 0, 0, 1.0);
     width: 100%;
     border-radius: 50px;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+nav:hover {
+    background-color: rgba(210, 247, 126, 1.0);
 }
 
 .dark-mode nav {
-    background-color: #333333;
+    background-color: rgba(51, 51, 51, 0.8);
     box-shadow: 5px 5px 14px rgba(99, 99, 99, 1.0);
 }
 
@@ -101,6 +174,7 @@ nav {
     display: flex;
     flex-grow: 1;
     justify-content: space-around;
+    border-radius: 25px;
 }
 
 .navTextLinks a {
@@ -119,9 +193,11 @@ nav {
 
 /* Contact Form */
 .contactForm {
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
     max-width: 400px;
-    padding: 40px;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 6px 6px 12px rgba(0, 0, 0, 1.0);
     color: #a5954f;
@@ -138,6 +214,10 @@ nav {
     border-radius: 5px;
     margin-bottom: 10px;
     font-size: large;
+}
+
+.contactForm #message {
+    height: 80px;
 }
 
 .contactForm input:invalid {
@@ -179,6 +259,10 @@ nav {
     transition: background-color 0.3s, color 0.3s;
 }
 
+.dark-mode h1{
+    color: rgb(154, 182, 87);
+}
+
 .dark-mode::before {
     filter: invert(1);
 }
@@ -201,32 +285,97 @@ nav {
     box-shadow: 5px 5px 14px rgb(99, 99, 99);
 }
 
-/* Grid Layout */
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 10px;
-    padding: 10px;
-}
-
-.grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    text-align: center;
-    border-radius: 50px;
-}
-
-.dark-mode .grid-item {
-    background-color: #333333;
-    border: 1px solid rgba(247, 247, 247, 0.8);
+.dark-mode .cardContainer{
+    color: rgb(154, 182, 87);
 }
 
 /* Home Content */
-.homeContent {
+#homeContent {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Cards */
+
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.card {
+    width: 325px;
+    height: 500px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 16px;
+    perspective: 1000px;
+}
+
+.cardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.cardFront, .cardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.cardFront {
+    background-color: #fff;
+}
+
+.cardBack {
+    background-color: #ffffff;
+    transform: rotateY(180deg);
+}
+
+.card.flipped .cardInner {
+    transform: rotateY(180deg);
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.cardContent {
+    padding-left: 14px;
+}
+
+.cardContent h3 {
+    font-size: 24px;
+    margin-bottom: -12px;
+}
+
+.cardContent ul {
+    font-size: 17px;
+    line-height: 1.2;
+    margin-right: 12px;
+}
+
+.cardContent .btn {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: #333;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 /* Slide-in Animation */
@@ -245,31 +394,87 @@ nav {
     animation: slideIn 1s ease-out;
 }
 
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#slide-down {
+    animation: slideDown 0.6s ease-out;
+}
+
 /* Media Query for Small Screens */
-@media (max-width: 450px) {
+@media (max-width: 650px) {
     nav {
         font-size: 20px;
-        flex-wrap: wrap;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        position: sticky;
     }
 
+    /* Hide navigation links initially */
     .navTextLinks {
-        flex-direction: column;
-        gap: 5px;
+        display: none; 
+        gap: 40px;
         font-size: 18px;
         text-align: center;
-        margin-top: 10px;
+        background-color: rgba(210, 247, 126, 0.9);
+        position: absolute;
+        top: 65px; 
+        width: 100%;
+        padding: 10px 0;
+        box-shadow: 5px 5px 14px rgba(0, 0, 0, 1.0);
+        opacity: 0; 
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
+    .dark-mode .navTextLinks {
+        background-color: rgba(51, 51, 51, 0.9);
+        border-radius: 25px;
+        box-shadow: 5px 5px 14px rgba(99, 99, 99, 1.0);
+    }
+
+    /* Show links when active */
+    .navTextLinks.active {
+        display: flex; 
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Center the burger menu button */
+    #menuButton {
+        display: block;
+        font-size: 30px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        left: 45%;
+        transform: translateX(0%); 
+        z-index: 2;
+        transition: transform 0.3s ease;
+    }
+
+    #menuButton:hover {
+        transform: scale(1.2);
+
+    /* Adjust h1 size */
     h1 {
         font-size: 2.5em;
     }
 
+    /* Adjust mode button size */
     #modeButton {
         font-size: 12px;
         width: auto;
-        padding: 8px 12px;
     }
-}
+}}

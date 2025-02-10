@@ -10,8 +10,9 @@
 </head>
 <body class="light-mode">
     <nav>
-        <a href="Home.html"><img id="HomeLogo" src="Homelogo.png" alt="Icon"></a> 
-        <div class="navTextLinks">
+        <a href="Home.html"><img id="HomeLogo" src="Homelogo.png" alt="Icon"></a>
+        <button id="menuButton">☰</button>
+        <div class="navTextLinks" id="slide-down">
             <a href="page2.html">About</a>
             <a href="page3.html">Recipes</a>
             <a href="page4.html">Contact</a>
@@ -19,16 +20,129 @@
         <button id="modeButton" onclick="toggleMode()">Dark Mode</button>
     </nav>
     <div class="center-container">
-        <h1>A little about Ottavio</h1>
+        <h1 class="slide-in">Some information about Pistachio</h1>
     </div>
-    <br>
-    <div class="grid-container">
-        <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
-        <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
-        <div class="grid-item">6</div>
+
+    <div class="cardContainer">
+        <!-- First Card -->
+        <div class="card">
+            <div class="cardInner">
+                <div class="cardFront">
+                    <img src="pistachioFruit.jpg" alt="Pistachios fruits on a tree branch">
+                    <div class="cardContent">
+                        <h3>What is it?</h3>
+                        <p>Pistachio nuts are the seeds of the pistachio tree's fruits.</p>
+                        <a href="#" class="btn" onclick="flipCard(event, this)">Read More</a>
+                    </div>
+                </div>
+                <div class="cardBack">
+                    <div class="cardContent">
+                        <h3>More Information</h3>
+                        <ul>
+                            <li>Originated in Central Asia and Middle East.</li>
+                            <li>Pistachio trees thrive in arid, desert climates.</li>
+                            <li>Unique green and purple color due to antioxidants.</li>
+                            <li>Symbol of wealth and happiness in ancient Persia.</li>
+                            <li>Known as the "happy nut" in China.</li>
+                            
+                            
+                        <a href="#" class="btn" onclick="flipCard(event, this)">Read Less</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Card -->
+        <div class="card">
+            <div class="cardInner">
+                <div class="cardFront">
+                    <img src="pistaPlace.webp" alt="Pistachio trees">
+                    <div class="cardContent">
+                        <h3>Where is produced?</h3>
+                        <p>Pistachios are produced in various regions around the world, 
+                        but a few countries are known for their significant contributions to global production:
+                        </p>
+                        <a href="#" class="btn" onclick="flipCard(event, this)">Read More</a>
+                    </div>
+                </div>
+                <div class="cardBack">
+                    <div class="cardContent">
+                        <h3>More Information</h3>
+                        <ul>
+                            <li>United States: About 54% of global production.</li>
+                            <li>Iran: Around 17% of global production.</li>
+                            <li>Turkey: About 11% of global production.</li>
+                            <li>China: Around 8% of global production.</li>
+                            <li>Syria: About 4% of global production.</li>
+                            <li>Greece: Around 2% of global production.</li>
+                            <li>Italy: About 1% of global production.Bronte's 
+                            contribution to the global pistachio market is relatively small
+                            but renowned for its high-quality pistachios.</li>
+                            <li>Togheter they account for 97% of global production. </li>
+                        <a href="#" class="btn" onclick="flipCard(event, this)">Read Less</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Third Card -->
+        <div class="card">
+            <div class="cardInner">
+                <div class="cardFront">
+                    <img src="pistaBowl.avif" alt="Bowl of pistachios">
+                    <div class="cardContent">
+                        <h3>What is inside?</h3>
+                        <p>Pistachios are packed with nutrients.
+                        They're a great source of protein, healthy fats, fiber, and various vitamins and minerals.
+                        </p>
+                        <a href="#" class="btn" onclick="flipCard(event, this)">Read More</a>
+                    </div>
+                </div>
+                <div class="cardBack">
+                    <div class="cardContent">
+                        <h3>More Information</h3>
+                        <ul>
+                            <li>Protein: A handful of pistachios can provide a good amount of protein, which is essential for muscle repair and growth.</li>
+                            <li>Healthy Fats: They contain heart-healthy monounsaturated and polyunsaturated fats.</li>
+                            <li>Fiber: Great for digestion and maintaining healthy gut flora.</li>
+                            <li>Antioxidants: Pistachios are rich in antioxidants, which help protect your cells from damage.</li>
+                        <a href="#" class="btn" onclick="flipCard(event, this)">Read Less</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fourth Card -->
+        <div class="card">
+            <div class="cardInner">
+                <div class="cardFront">
+                    <img src="pistachioCream.webp" alt="Pistachio cream">
+                    <div class="cardContent">
+                        <h3>How is it consumed?</h3>
+                        <p>Used in both sweet and savory culinary dishes,
+                        pistachios are consumed in various forms.
+                        </p>
+                        <a href="#" class="btn" onclick="flipCard(event, this)">Read More</a>
+                    </div>
+                </div>
+                <div class="cardBack">
+                    <div class="cardContent">
+                        <h3>More Information</h3>
+                        <ul>
+                            <li>Pistachio Gelato.</li>
+                            <li>Pistachio Baklava.</li>
+                            <li>Pistachio pesto pasta.</li>
+                            <li>Roasted & salted pistachio.</li>
+                            <li>Pistachio cream.</li>
+                            <li>Pistachio granola.</li>
+                            <li>Pistachio Milk.</li>
+                            <li>Pistachio brittle.</li>
+                        <a href="#" class="btn" onclick="flipCard(event, this)">Read Less</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
