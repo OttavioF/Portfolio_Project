@@ -118,6 +118,3 @@ async function getFruits() {
         console.error("Error fetching fruit data:", error);
     }
 }
-
-// Call function on page load
-document.addEventListener('DOMContentLoaded', getFruits);
