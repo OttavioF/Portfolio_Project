@@ -12,20 +12,19 @@
     <nav>
         <a href="Home.html"><img id="HomeLogo" src="Homelogo.png" alt="Icon"></a>
         <button id="menuButton">☰</button>
-        <div class="navTextLinks" id="slide-down">
-            <a href="page2.html">About</a>
-            <a href="page3.html">Recipes</a>
-            <a href="page4.html">Contact</a>
-        </div>
+            <div class="navTextLinks" id="slide-down">
+                <a href="page2.html">About</a>
+                <a href="page3.html">Recipes</a>
+                <a href="page4.html">Contact</a>
+            </div>
         <button id="modeButton" onclick="toggleMode()">Dark Mode</button>
     </nav>
     <div class="center-container">
-        <h1 class="slide-in">Some information about Pistachio</h1>
+        <h1 id="slide-up">Some information about Pistachio</h1>
     </div>
-
     <div class="cardContainer">
         <!-- First Card -->
-        <div class="card">
+        <div class="card" id="slide-left">
             <div class="cardInner">
                 <div class="cardFront">
                     <img src="pistachioFruit.jpg" alt="Pistachios fruits on a tree branch">
@@ -51,9 +50,8 @@
                 </div>
             </div>
         </div>
-
         <!-- Second Card -->
-        <div class="card">
+        <div class="card" id="slide-left">
             <div class="cardInner">
                 <div class="cardFront">
                     <img src="pistaPlace.webp" alt="Pistachio trees">
@@ -84,9 +82,8 @@
                 </div>
             </div>
         </div>
-
         <!-- Third Card -->
-        <div class="card">
+        <div class="card" id="slide-left">
             <div class="cardInner">
                 <div class="cardFront">
                     <img src="pistaBowl.avif" alt="Bowl of pistachios">
@@ -111,9 +108,8 @@
                 </div>
             </div>
         </div>
-
         <!-- Fourth Card -->
-        <div class="card">
+        <div class="card" id="slide-left">
             <div class="cardInner">
                 <div class="cardFront">
                     <img src="pistachioCream.webp" alt="Pistachio cream">
@@ -142,7 +138,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </body>
 </html>

@@ -9,6 +9,13 @@ body, html {
 
 #homeContent {
     font-weight: bold;
+    padding: 20px;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 8%;
 }
 
 body::before {
@@ -35,8 +42,8 @@ h1 {
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    padding: 20px;
-    gap:20px;
+    padding: 16px;
+    gap:25px;
     justify-items: center;
 }
 
@@ -46,11 +53,45 @@ h1 {
     height: 350px;
     object-fit: cover;
     cursor: pointer;
-    transition: transform 0.2s;
+    opacity: 0;
+    transition: all 1s ease-in-out 1s;
 }
 
-.gallery img:hover {
-    transform: scale(1.05);
+.gallery img.animate-slideLeft {
+    animation: slideLeft 1s ease-out forwards;
+}
+
+.gallery img.animate-slideDown {
+    animation: slideDown 1s ease-out forwards;
+}
+
+.gallery img.animate-slideUp {
+    animation: slideUp 1s ease-out forwards;
+}
+
+.gallery img.animate-slideRight {
+    animation: slideRight 1s ease-out forwards;
+}
+
+#slide-down {
+    animation: slideDown 1s ease-out forwards;
+}
+
+#slide-up {
+    animation: slideUp 1s ease-out forwards;
+}
+
+#slide-right {
+    animation: slideRight 1s ease-out forwards;
+}
+
+#slide-left {
+    animation: slideLeft 1s ease-out forwards;
+}
+
+.gallery img:hover{
+    transform: scale(1.1);
+    /* transition: all 0.3s ease-in-out;  */
 }
 
 /* Lightbox styles */
@@ -123,12 +164,6 @@ h1 {
     border-color: #1a9434;
     color: #1a9434;
 }
-/* Utility Classes */
-.center-container {
-    display: flex;
-    justify-content: center;
-    padding-top: 8%;
-}
 
 /* Logo */
 #HomeLogo {
@@ -169,6 +204,9 @@ nav:hover {
     box-shadow: 5px 5px 14px rgba(99, 99, 99, 1.0);
 }
 
+.dark-mode nav:hover {
+    background-color: rgba(51, 51, 51, 1.0);
+}
 /* Navigation Links */
 .navTextLinks {
     display: flex;
@@ -281,24 +319,15 @@ nav:hover {
 }
 
 .dark-mode .contactForm {
-    background-color: #333333;
-    box-shadow: 5px 5px 14px rgb(99, 99, 99);
+    background-color: rgba(51, 51, 51, 0.9);
+    box-shadow: 0px 0px 15px rgb(99, 99, 99);
 }
 
 .dark-mode .cardContainer{
     color: rgb(154, 182, 87);
 }
 
-/* Home Content */
-#homeContent {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 20px;
-}
-
 /* Cards */
-
 .cardContainer {
     display: flex;
     justify-content: center;
@@ -378,35 +407,45 @@ nav:hover {
     text-decoration: underline;
 }
 
-/* Slide-in Animation */
-@keyframes slideIn {
+/* Slide Animation */
+@keyframes slideLeft {
     from {
-        transform: translateX(-100%);
+        transform: translateX(-100%) rotate(-45deg) scale(0.3);
         opacity: 0;
     }
     to {
-        transform: translateX(0);
         opacity: 1;
     }
-}
-
-.slide-in {
-    animation: slideIn 1s ease-out;
 }
 
 @keyframes slideDown {
     from {
-        transform: translateY(-100%);
+        transform: translateY(-100%) scale(0.3);
         opacity: 0;
     }
     to {
-        transform: translateY(0);
         opacity: 1;
     }
 }
 
-#slide-down {
-    animation: slideDown 0.6s ease-out;
+@keyframes slideUp {
+    from {
+        transform: translateY(100%) scale(0.3);
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(100%) rotate(45deg) scale(0.3);
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Media Query for Small Screens */

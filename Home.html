@@ -9,7 +9,6 @@
     <title>Home</title>
 </head>
 <body class="light-mode">
-<div class="text-fade"></div>
     <nav>
         <a href="Home.html"><img id="HomeLogo" src="Homelogo.png" alt="Home"></a>
         <button id="menuButton">☰</button>  
@@ -21,20 +20,21 @@
         <button id="modeButton" onclick="toggleMode()">Dark Mode</button>
     </nav>
     <div class="center-container">
-        <h1 class="slide-in">Welcome to Pistachio's Home!</h1>
+        <h1 id="slide-up">Welcome to Pistachio's Home!</h1>
     </div>
 <div id="homeContent">
     <p>A tiny but mighty nut that has been cherished for thousands of years.</p>
     <p>Originary from the ancient landscapes of the Middle East, pistachios have traveled through time and across cultures to become a beloved snack and versatile ingredient in kitchens worldwide.</p>
-    <p>Pistachios are not only celebrated for their distinctive, rich flavor and satisfying crunch but also for their remarkable nutritional benefits. Packed with essential vitamins, minerals, and heart-healthy fats, these little green gems are a powerhouse of goodness.</p>
+    <p>Pistachios are not only celebrated for their distinctive, rich flavor and satisfying crunch but also for their remarkable nutritional benefits.</p>
+    <p>Packed with essential vitamins, minerals, and heart-healthy fats, these little green gems are a powerhouse of goodness.</p>
     <p>Whether you're a culinary enthusiast looking to elevate your dishes, a health-conscious individual seeking a nutritious snack, or simply a pistachio aficionado, our website is your ultimate destination for all things pistachio.
     <p>Join us as we explore the fascinating history, health benefits, and delicious recipes that make pistachios a true delight.</p>
 </div>
 <div class="gallery">
-    <img src="pistatree.jpg" alt="Pistachio fruits on tree">
-    <img src="pistastages.webp" alt="Pistachio's stages">
-    <img src="pistabowl.jpg" alt="Bowl of pistachios">
-    <img src="pistacloseup.jpeg" alt="Pistachio">
+    <img class="gallery-img" data-animation="slideLeft" src="pistatree.jpg" alt="Pistachio fruits on tree">
+    <img class="gallery-img" data-animation="slideDown" src="pistastages.webp" alt="Pistatio's stages">
+    <img class="gallery-img" data-animation="slideUp" src="pistabowl.jpg" alt="Bowl of pistachios">
+    <img class="gallery-img" data-animation="slideRight" src="pistacloseup.jpeg" alt="Pistachio">
 </div>
 <div id="lightbox" class="lightbox">
     <span class="close">&times;</span>
