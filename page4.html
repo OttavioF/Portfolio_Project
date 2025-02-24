@@ -19,19 +19,44 @@
             </div>
         <button id="modeButton" onclick="toggleMode()">Dark Mode</button>
     </nav>
-    <div class="center-container">
-        <h1 id="slide-up">Get in touch!</h1>
+    <div class="main">
+        <div class="center-container">
+            <h1 id="slide-left">Get&nbsp;</h1>
+            <h1 id="slide-up">in&nbsp;</h1>
+            <h1 id="slide-right">touch!</h1>
+        </div>
+        <div class="form" id="slide-up">
+            <form class="contactForm" id="userForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required/>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required/>
+                <label for="message">Message:</label>
+                <input type="text" id="message" name="message" required/>
+                <button type="submit" id="submitForm">Submit</button>
+            </form>
+        </div>
     </div>
-    <div class="form" id="slide-up">
-        <form class="contactForm" id="userForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required/>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required/>
-            <label for="message">Message:</label>
-            <input type="text" id="message" name="message" required/>
-            <button type="submit" id="submitForm">Submit</button>
-        </form>
-    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <p>This website is dedicated to sharing knowledge about pistachio nuts, their benefits, and uses.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="Home.html">Home</a>
+                <a href="page2.html">About</a>
+                <a href="page3.html">Recipes</a>
+                <a href="page4.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: <a href="mailto:fazzio.ottavio@gmail.com">fazzio.ottavio@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ottavio Fazzio. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

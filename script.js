@@ -13,6 +13,32 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.remove('dark-mode');
         modeButton.textContent = 'Dark Mode';
     }
+    let toast = document.createElement('div');
+    toast.id = 'toast';
+    // Basic styling for the toast; adjust as needed
+    toast.style.position = 'fixed';
+    toast.style.top = '20px';
+    toast.style.left = '50%';
+    toast.style.transform = 'translateX(-50%)';
+    toast.style.backgroundColor = 'rgba(109, 0, 0, 0.8)';
+    toast.style.color = '#fff';
+    toast.style.padding = '10px 20px';
+    toast.style.borderRadius = '25px';
+    toast.style.border = '2px solid rgba(0, 218, 65, 0.8)';
+    toast.style.fontSize = '18px';
+    toast.style.zIndex = '1000';
+    toast.style.opacity = '0';
+    toast.style.transition = 'opacity 0.5s ease';
+    document.body.appendChild(toast);
+
+    // Function to show toast notifications
+    function showToast(message, duration = 7000) {
+        toast.textContent = message;
+        toast.style.opacity = '1';
+        setTimeout(() => {
+            toast.style.opacity = '0';
+        }, duration);
+    }
     // Form Submission Handling
     const form = document.getElementById("userForm");
     if (form) {
@@ -27,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('Email:', emailInput.value);
                 console.log('Message:', messageInput.value);
                 
-                alert('Thank you for your submission! You can contact Ottavio at fazzio.ottavio@gmail.com');
+                showToast('Thank you for your submission! You can contact Ottavio at "fazzio.ottavio@gmail.com"');
                 form.reset();
             } else {
                 console.log('Form is invalid. Please correct the errors.');

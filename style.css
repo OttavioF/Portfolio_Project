@@ -5,6 +5,12 @@ body, html {
     width: 100%;
     height: 100%;
     font-family: Arial, sans-serif;
+    display:flex;
+    flex-direction: column;
+}
+
+.main{
+    flex: 1;
 }
 
 #homeContent {
@@ -31,6 +37,15 @@ body::before {
     opacity: 0.2;
     pointer-events: none;
     z-index: -1;
+}
+
+.footer {
+    display: block;
+    background-color: rgba(34, 34, 34, 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
 }
 
 h1 {
@@ -147,6 +162,10 @@ h1 {
     cursor: pointer;
 }
 
+.dark-mode #menuButton {
+    color: rgb(154, 182, 87);
+}
+
 #submitForm {
     font-size: 16px;
     border-radius: 25px;
@@ -177,6 +196,7 @@ h1 {
 
 #HomeLogo:hover {
     transform: scale(1.1);
+    z-index: 1001;
 }
 
 /* Navigation Bar */
@@ -464,7 +484,7 @@ nav:hover {
         gap: 40px;
         font-size: 18px;
         text-align: center;
-        background-color: rgba(210, 247, 126, 0.9);
+        background-color: rgba(210, 247, 126, 0.8);
         position: absolute;
         top: 65px; 
         width: 100%;
@@ -476,7 +496,7 @@ nav:hover {
     }
 
     .dark-mode .navTextLinks {
-        background-color: rgba(51, 51, 51, 0.9);
+        background-color: rgba(51, 51, 51, 0.8);
         border-radius: 25px;
         box-shadow: 5px 5px 14px rgba(99, 99, 99, 1.0);
     }
@@ -487,6 +507,14 @@ nav:hover {
         opacity: 1;
         transform: translateY(0);
         transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .navTextLinks.active:hover {
+        background-color: rgba(210, 247, 126, 1.0);
+    }
+
+    .dark-mode .navTextLinks.active:hover {
+        background-color: rgba(51, 51, 51, 1.0);
     }
 
     /* Center the burger menu button */
